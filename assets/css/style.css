@@ -19,8 +19,30 @@
     font-weight: 700;
 }
 
+:root {
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1440px;
+
+    --text-preset-1-font-size: 24px;
+    --text-preset-1-line-height: 36px;
+
+    --text-preset-2-font-size: 14px;
+    --text-preset-2-line-height: 21px;
+}
+
+.text-preset-1 {
+    font-size: var(--text-preset-1-font-size);
+    line-height: var(--text-preset-1-line-height);
+}
+
+.text-preset-2 {
+    font-size: var(--text-preset-2-font-size);
+    line-height: var(--text-preset-2-line-height);
+}
+
 * {
     box-sizing: border-box;
+    font-family: "Inter";
 }
 
 html,
@@ -38,9 +60,10 @@ body {
 .container {
     display: flex;
     flex-direction: column;
+    width: 327px;
     background-color: #1f1f1f;
-    max-width: 384px;
-    padding: 20px;
+    padding: 24px;
+    border-radius: 12px;
 }
 
 .circle {
@@ -50,13 +73,24 @@ body {
 h2 {
     color: white;
     text-align: center;
-    font-family: "Inter";
     font-weight: 600;
-    line-height: 36px;
+    margin-bottom: 4px;
 }
 
 .text--green {
     color: #c4f82a;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+.bold {
+    font-weight: 700;
 }
 
 .text--white {
@@ -72,6 +106,8 @@ main {
 
 p {
     text-align: center;
+    margin-top: 4px; 
+    margin-bottom: 24px;
 }
 
 .profile-pic {
@@ -85,12 +121,31 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 304px;
+    width: 100%;
     height: 45px;
-    padding: 6px;
+    padding: 12px;
     background-color: #333333;
     text-decoration: none;
     cursor: default;
     border-radius: 8px;
     color: white;
+    transition: 1s;
+}
+
+a:hover {
+    background-color: #c4f82a;
+    color: #333333;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 456px;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .container {
+        width: 384px;
+    }
 }
